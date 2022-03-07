@@ -63,7 +63,3 @@ def read_exames():
             {"id":14,"exame":"Ecografia tridimensional"},
             {"id":15,"exame":"Ecodopler"}]
     return exames
-
-#@app.get("/items/{item_id}")
-#def read_item(item_id: int, q: Optional[str] = None):
-#    return {"item_id": item_id, "q": q}
