@@ -10,10 +10,7 @@ def get_convenios()->list:
 
 @app.get("/preparo/{exame_id}")
 def get_preparo(exame_id:int)->list:
-    response = list()
-    for i in PREPAROS: 
-        if i.get("id") == exame_id:
-            response.append(i)
+    response = [x for x in PREPAROS if x.get("id") == exame_id]
     return response
 
 @app.get("/exames")
@@ -23,8 +20,5 @@ def get_exames()->list:
 
 @app.get("/orcamento/{exame_id}")
 def get_orcamento(exame_id:int)->list:
-    response = list()
-    for i in ORCAMENTOS: 
-        if i.get("id") == exame_id:
-            response.append(i)
+    response = [x for x in ORCAMENTOS if x.get("id") == exame_id]
     return response
