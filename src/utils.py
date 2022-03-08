@@ -1,4 +1,6 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import HTTPException
+from fastapi.openapi.utils import get_openapi
+
 from decouple import config
 
 SECRET_KEY = config("SECRET_KEY")

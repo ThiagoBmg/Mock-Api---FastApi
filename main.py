@@ -1,6 +1,7 @@
 from fastapi import FastAPI, HTTPException
-from data import CONVENIOS, ORCAMENTOS, PREPAROS, EXAMES
-from utils import get_api_key
+from fastapi.openapi.utils import get_openapi
+from src.data import CONVENIOS, ORCAMENTOS, PREPAROS, EXAMES
+from src.utils import get_api_key
 
 app = FastAPI()
 
@@ -31,3 +32,11 @@ def get_orcamento(exame_id:int,api_key:str=None)->list:
     if not response:
         raise HTTPException(status_code=404, detail="Exame não localizado")
     return response
+
+
+app.openapi_schema =  get_openapi(
+        title="Lumia Get Started",
+        version="0.0.1",
+        description="Api para simulação de integração com a Lumia",
+        routes=app.routes,
+)
