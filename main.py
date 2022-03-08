@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.openapi.utils import get_openapi
 from src.data import CONVENIOS, ORCAMENTOS, PREPAROS, EXAMES
-from src.utils import get_api_key,custom_openapi
+from src.utils import get_api_key
 
 app = FastAPI()
 
